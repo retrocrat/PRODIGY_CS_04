@@ -52,6 +52,8 @@ The provided script is a simple keylogger implemented in Python using the `pynpu
 
 **Note**: Always ensure ethical and legal compliance when working with keylogging software. This type of script must only be used with proper consent and in accordance with local laws.
 
+---
+
 ### **Code**  
 
 Here is the Python code for the Simple Keylogger:
